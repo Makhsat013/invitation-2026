@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitation à notre célébration</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f8f5ef;color:#3d342c;font-family:Montserrat,sans-serif}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;position:relative;overflow:hidden;background:linear-gradient(135deg,#fbfaf7,#f2eadb)}
+.hero:before,.hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(180,140,70,.35);border-radius:50%;transform:rotate(25deg)}
+.hero:before{left:-150px;top:-80px}.hero:after{right:-150px;bottom:-80px}
+.orn{font-size:34px;color:#b58a45;letter-spacing:8px;margin-bottom:25px}
+.card{max-width:780px;padding:55px 28px;position:relative;z-index:1}
+.kicker{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#a27b42}
+h1{font-family:"Cormorant Garamond",serif;font-size:clamp(54px,10vw,92px);font-weight:500;line-height:.9;margin:20px 0;color:#9b7339}
+h2{font-family:"Cormorant Garamond",serif;font-size:42px;font-weight:500;margin:10px 0 25px}
+.divider{display:flex;align-items:center;gap:12px;justify-content:center;color:#b58a45;margin:25px 0}
+.divider span{width:70px;height:1px;background:#c6a66b}
+.intro{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.45;max-width:700px;margin:auto}
+.date{font-size:18px;letter-spacing:2px;margin:30px 0 8px}
+.place{font-size:15px;line-height:1.7}
+.btn{display:inline-block;margin-top:30px;padding:14px 28px;border:1px solid #b58a45;color:#8d6835;text-decoration:none;letter-spacing:1px;font-size:12px;text-transform:uppercase;transition:.3s}
+.btn:hover{background:#b58a45;color:white}
+section{padding:80px 20px;text-align:center}
+.section-inner{max-width:900px;margin:auto}
+.soft{background:#eee7da}
+.names{font-family:"Cormorant Garamond",serif;font-size:42px;color:#9b7339}
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:35px}
+.event{padding:28px 18px;border:1px solid #d8c6a7;background:rgba(255,255,255,.45)}
+.event b{display:block;color:#a27b42;margin-bottom:10px}
+.event span{font-family:"Cormorant Garamond",serif;font-size:24px}
+.countdown{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:30px}
+.unit{min-width:90px}.num{font-family:"Cormorant Garamond",serif;font-size:45px;color:#9b7339}.label{font-size:10px;letter-spacing:2px}
+footer{padding:45px 20px;text-align:center;background:#302820;color:#e8dcc8}
+footer .names{color:#d4ae6c}
+@media(max-width:700px){.events{grid-template-columns:1fr}.intro{font-size:22px}section{padding:60px 18px}}
+
+.lang-switch{display:flex;justify-content:center;gap:8px;margin:18px 0}
+.lang-btn{border:1px solid #c6a66b;background:transparent;color:#8d6835;padding:8px 14px;font-size:11px;letter-spacing:1px;cursor:pointer}
+.lang-btn.active{background:#b58a45;color:#fff}
+</style>
+</head>
+<body>
+<section class="hero" id="top">
+  <div class="card">
+    <div class="lang-switch">
+      <button id="btn-kk" class="lang-btn" onclick="setLang('kk')">ҚАЗАҚША</button>
+      <button id="btn-fr" class="lang-btn active" onclick="setLang('fr')">FRANÇAIS</button>
+    </div>
+    <div class="orn">✦ ❖ ✦</div>
+    <div class="kicker" id="kicker-1">INVITATION</div>
+    <h1 id="title-1">Partagez notre<br>joie !</h1>
+    <div class="divider"><span></span> ❖ <span></span></div>
+    
+    <p class="intro" id="intro-text">
+      Cher(e) ami(e)s!<br><br>
+      Venez célébrer avec nous les événements marquants de l'année 2026 de notre famille :<br><br>
+      <strong>Les 80 ans de notre chère maman ; les 50 ans de mon épouse adorée et les premiers pas à l'école de notre petite fille Anelya.</strong><br><br>
+      La soirée aura lieu le 6 septembre 2026 à 19h00 au restaurant Alya à Kyzyl-Charyk (Kazakhstan).<br><br>
+      Mathieu et Ainur
+    </p>
+    
+    <div class="date" id="date-text">6 SEPTEMBRE 2026 · 19H00</div>
+    <div class="place" id="place-text">Kyzyl-Charyk, Kazakhstan<br>Restaurant « Alya »</div>
+    <a class="btn" href="#details" id="btn-discover">Découvrir l’invitation</a>
+  </div>
+</section>
+
+<section id="details">
+  <div class="section-inner">
+    <div class="kicker" id="sec-kicker">Notre joie</div>
+    <h2 id="sec-title">Trois célébrations en une</h2>
+    <div class="divider"><span></span> ❖ <span></span></div>
+    <div class="events">
+      <div class="event"><b>80 ANS / ЖАС</b><span id="ev-1">Anniversaire de notre chère maman Batykan</span></div>
+      <div class="event"><b>50 ANS / ЖАС</b><span id="ev-2">Anniversaire de notre chère Ainur</span></div>
+      <div class="event"><b>ÉCOLE / МЕКТЕП</b><span id="ev-3">Les premiers pas à l'école de notre petite Anelya</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="kicker" id="time-kicker">À bientôt</div>
+    <h2 id="time-title">Jusqu'à la fête</h2>
+    <div class="countdown">
+      <div class="unit"><div class="num" id="days">00</div><div class="label" id="l-days">JOURS</div></div>
+      <div class="unit"><div class="num" id="hours">00</div><div class="label" id="l-hours">HEURES</div></div>
+      <div class="unit"><div class="num" id="minutes">00</div><div class="label" id="l-mins">MINUTES</div></div>
+      <div class="unit"><div class="num" id="seconds">00</div><div class="label" id="l-secs">SECONDES</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="section-inner">
+    <div class="kicker" id="loc-kicker">Lieu</div>
+    <h2>«Әлия» мейрамханасы</h2>
+    <p>Қызылшарық ауылы</p>
+    <a class="btn" target="_blank" href="https://go.2gis.com/ceaag" id="btn-map">Ouvrir dans 2GIS</a>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="orn">❖</div>
+    <h2 id="final-title">Nous vous attendons avec impatience !</h2>
+    <p class="intro" id="final-desc">Votre présence et vos bons vœux sont notre plus beau cadeau.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="kicker" id="footer-kicker">LES HÔTES</div>
+  <div class="names">Матье – Айнұр</div>
+</footer>
+
+<script>
+const target = new Date("2026-09-06T19:00:00+05:00").getTime();
+function tick(){
+ const d=target-Date.now();
+ if(d<=0){document.querySelector(".countdown").innerHTML="<div class='names'>Тойымыз басталды! / La fête a commencé !</div>";return}
+ document.getElementById("days").textContent=String(Math.floor(d/86400000)).padStart(2,"0");
+ document.getElementById("hours").textContent=String(Math.floor(d/3600000)%24).padStart(2,"0");
+ document.getElementById("minutes").textContent=String(Math.floor(d/60000)%60).padStart(2,"0");
+ document.getElementById("seconds").textContent=String(Math.floor(d/1000)%60).padStart(2,"0");
+}
+tick();setInterval(tick,1000);
+
+const contentData = {
+  fr: {
+    kicker1: "INVITATION",
+    title1: "Partagez notre<br>joie !",
+    intro: "Cher(e) ami(e)s!<br><br>Venez célébrer avec nous les événements marquants de l'année 2026 de notre famille :<br><br><strong>Les 80 ans de notre chère maman ; les 50 ans de mon épouse adorée et les premiers pas à l'école de notre petite fille Anelya.</strong><br><br>La soirée aura lieu le 6 septembre 2026 à 19h00 au restaurant Alya à Kyzyl-Charyk (Kazakhstan).<br><br>Mathieu et Ainur",
+    date: "6 SEPTEMBRE 2026 · 19H00",
+    place: "Kyzyl-Charyk, Kazakhstan<br>Restaurant « Alya »",
+    btnDiscover: "Découvrir l’invitation",
+    secKicker: "Notre joie",
+    secTitle: "Trois célébrations en une",
+    ev1: "Anniversaire de notre chère maman Batykan",
+    ev2: "Anniversaire de notre chère Ainur",
+    ev3: "Les premiers pas à l'école de notre petite Anelya",
+    timeKicker: "À bientôt",
+    timeTitle: "Jusqu'à la fête",
+    ldays: "JOURS", lhours: "HEURES", lmins: "MINUTES", lsecs: "SECONDES",
+    locKicker: "Lieu",
+    btnMap: "Ouvrir dans 2GIS",
+    finalTitle: "Nous vous attendons avec impatience !",
+    finalDesc: "Votre présence et vos bons vœux sont notre plus beau cadeau.",
+    footerKicker: "LES HÔTES"
+  },
+  kk: {
+    kicker1: "Салтанатты кешке шақыру",
+    title1: "Қуанышымызға<br>ортақ болыңыз!",
+    intro: "Қадірменді қонақтар!<br><br>Аяулы анамыз Бақтықанның 80 жасқа, асыл жарым Айнұрдың 50 жасқа, бүлдіршініміз Анеляның мектеп табалдырығын аттаған қуанышына арналған салтанатты кешіміздің куәсі болуға шақырамыз.<br><br>Кеш 2026 жылдың 6 қыркүйегінде сағат 19:00-де Қызылшарық ауылындағы «Әлия» мейрамханасында өтеді.<br><br>Матье мен Айнұр",
+    date: "6 ҚЫРКҮЙЕК 2026 · 19:00",
+    place: "Қызылшарық ауылы<br>«Әлия» мейрамханасы",
+    btnDiscover: "Шақыруды ашу",
+    secKicker: "Біздің қуанышымыз",
+    secTitle: "Үш қуаныш — бір мереке",
+    ev1: "Бақтықан апамыздың мерейлі жасы",
+    ev2: "Айнұрдың мерейлі белесі",
+    ev3: "Анеляның мектеп табалдырығын аттауы",
+    timeKicker: "Кездескенше",
+    timeTitle: "Мерекеге дейін",
+    ldays: "КҮН", lhours: "САҒАТ", lmins: "МИНУТ", lsecs: "СЕКУНД",
+    locKicker: "Мекен-жай",
+    btnMap: "2GIS арқылы ашу",
+    finalTitle: "Сіздерді асыға күтеміз!",
+    finalDesc: "Ақ тілектеріңіз бен ақжарма көңілдеріңіз — біздің қуанышымыздың ең үлкен сыйы.",
+    footerKicker: "Той иелері"
+  }
+};
+
+function setLang(lang){
+  const d = contentData[lang];
+  document.getElementById('kicker-1').innerHTML = d.kicker1;
+  document.getElementById('title-1').innerHTML = d.title1;
+  document.getElementById('intro-text').innerHTML = d.intro;
+  document.getElementById('date-text').innerHTML = d.date;
+  document.getElementById('place-text').innerHTML = d.place;
+  document.getElementById('btn-discover').innerHTML = d.btnDiscover;
+  
+  document.getElementById('sec-kicker').innerHTML = d.secKicker;
+  document.getElementById('sec-title').innerHTML = d.secTitle;
+  document.getElementById('ev-1').innerHTML = d.ev1;
+  document.getElementById('ev-2').innerHTML = d.ev2;
+  document.getElementById('ev-3').innerHTML = d.ev3;
+  
+  document.getElementById('time-kicker').innerHTML = d.timeKicker;
+  document.getElementById('time-title').innerHTML = d.timeTitle;
+  document.getElementById('l-days').innerHTML = d.ldays;
+  document.getElementById('l-hours').innerHTML = d.lhours;
+  document.getElementById('l-mins').innerHTML = d.lmins;
+  document.getElementById('l-secs').innerHTML = d.lsecs;
+  
+  document.getElementById('loc-kicker').innerHTML = d.locKicker;
+  document.getElementById('btn-map').innerHTML = d.btnMap;
+  
+  document.getElementById('final-title').innerHTML = d.finalTitle;
+  document.getElementById('final-desc').innerHTML = d.finalDesc;
+  document.getElementById('footer-kicker').innerHTML = d.footerKicker;
+
+  document.getElementById('btn-kk').classList.toggle('active', lang==='kk');
+  document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+}
+
+setLang('fr');
+</script>
+</body>
+</html>
